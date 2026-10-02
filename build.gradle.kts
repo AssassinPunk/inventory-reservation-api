@@ -53,3 +53,6 @@ tasks.withType<Test> {
 	// Tests don't run main(), so set UTC here too (avoids the Asia/Calcutta PostgreSQL error)
 	systemProperty("user.timezone", "UTC")
 }
+tasks.named<Jar>("jar") {
+	enabled = false
+}
