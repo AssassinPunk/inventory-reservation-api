@@ -13,6 +13,6 @@ spring:
   mvc:
     problemdetails:
       enabled: true
-  inventory:
-    reservation:
-      max-attempts: 5
+inventory:
+  reservation:
+    max-attempts: 5
