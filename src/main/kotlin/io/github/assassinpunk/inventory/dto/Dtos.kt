@@ -11,6 +11,7 @@ import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Pattern
 import jakarta.validation.constraints.Size
 import java.math.BigDecimal
+import jakarta.validation.constraints.Max
 
 // ---------- Requests (what clients send) ----------
 
@@ -47,6 +48,25 @@ data class SetStockRequest(
 
     @field:Min(0)
     val quantity: Int,
+)
+data class ReserveRequest(
+    @field:NotBlank
+    val sku: String,
+
+    @field:NotNull
+    val storeId: Long,
+
+    @field:Min(1)
+    @field:Max(100)
+    val quantity: Int,
+)
+
+data class ReservationResponse(
+    val reservationId: Long,
+    val sku: String,
+    val storeId: Long,
+    val quantity: Int,
+    val remainingStock: Int,
 )
 
 // ---------- Responses (what the API returns) ----------

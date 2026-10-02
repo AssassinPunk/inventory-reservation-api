@@ -1,5 +1,6 @@
 package io.github.assassinpunk.inventory.repository
 
+import io.github.assassinpunk.inventory.domain.Reservation
 import io.github.assassinpunk.inventory.domain.Inventory
 import io.github.assassinpunk.inventory.domain.Product
 import io.github.assassinpunk.inventory.domain.Store
@@ -39,3 +40,4 @@ interface InventoryRepository : JpaRepository<Inventory, Long> {
     )
     fun findInStockBySkuAndPincode(sku: String, pincode: String): List<Inventory>
 }
+interface ReservationRepository : JpaRepository<Reservation, Long>

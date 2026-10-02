@@ -10,3 +10,9 @@ spring:
       ddl-auto: update
     show-sql: true
     open-in-view: false
+  mvc:
+    problemdetails:
+      enabled: true
+  inventory:
+    reservation:
+      max-attempts: 5
